@@ -1,6 +1,7 @@
 # Put your app in here.
 from flask import Flask, request
 from operations import add, sub, mult, div
+
 app = Flask(__name__)
 
 @app.route("/add")
@@ -12,9 +13,9 @@ def do_add():
 
     return str(result)
 
-@app.route("/subtract")
+@app.route("/sub")
 def do_subtract():
-    """ subtract parameters"""
+    """ subtracts parameters"""
     a = int(request.args.get('a'))
     b = int(request.args.get('b'))
     result = sub(a,b)
@@ -22,18 +23,18 @@ def do_subtract():
     return str(result)
 
 
-@app.route("/divide")
+@app.route("/div")
 def do_divide():
-    """ divide parameters"""
+    """ divides parameters"""
     a = int(request.args.get('a'))
     b = int(request.args.get('b'))
     result = div(a,b)
 
     return str(result)   
 
-@app.route("/multiply")
+@app.route("/mult")
 def do_multiply():
-    """ multiply parameters"""
+    """ multiplys parameters"""
     a = int(request.args.get('a'))
     b = int(request.args.get('b'))
     result = mult(a,b)

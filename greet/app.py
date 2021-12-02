@@ -10,7 +10,7 @@ def welcome():
 def welcome_back():
     return 'welcome back'
 
-@app.route('welcome/home')
-def welcome_back():
+@app.route('/welcome/home')
+def welcome_home():
     return "welcome home"
             
